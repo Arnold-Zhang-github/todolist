@@ -1,12 +1,14 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
-
+import { headers } from 'next/headers';
 const getTopics = async () => {
    try {
-      // 使用环境变量或默认值来设置 API URL
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-      const res = await fetch(`${apiUrl}/api/topics`, {
+      // 获取当前请求的 host
+      const host = headers().get('host') || 'localhost:3000';
+      const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+      
+      const res = await fetch(`${protocol}://${host}/api/topics`, {
          cache: "no-store",
       });
 
