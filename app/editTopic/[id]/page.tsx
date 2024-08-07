@@ -3,7 +3,7 @@ import EditTopicForm from "@/components/EditTopicForm";
 
 const getTopicById = async (id: string) => {
    try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`/api/topics/${id}`, {
          cache: "no-store",
          next: { revalidate: 0 },
       });
@@ -22,11 +22,7 @@ const getTopicById = async (id: string) => {
    }
 };
 
-export default async function EditTopic({
-   params,
-}: {
-   params: { id: string };
-}) {
+export default async function EditTopic({ params }: { params: { id: string } }) {
    const { id } = params;
    console.log("Fetching topic with id:", id);
 
