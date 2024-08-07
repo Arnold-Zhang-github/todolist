@@ -24,6 +24,6 @@
   
     "allowSyntheticDefaultImports": true,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "libs/mongodb.tsx", "app/api/topics/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "libs/mongodb.tsx", "app/api/topics/route.js", "utils/cors.js"],
   "exclude": ["node_modules"]
 }
